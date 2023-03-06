@@ -48,12 +48,7 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit, initialValues }) => {
       <Title>Регистрация пользователя</Title>
       <Form onSubmit={onSubmitHandle} initialValues={initialValues}>
         {({ handleSubmit, submitting, form, ...rest }) => (
-          <form
-            onSubmit={(e) => {
-              handleSubmit(e);
-              form.restart(initialValues);
-            }}
-          >
+          <form onSubmit={handleSubmit}>
             <Space direction="vertical">
               <Field
                 name="fullName"
